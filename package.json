@@ -1,6 +1,7 @@
 {
   "name":"studentmeme",
   "dependencies": {
-    "express"    : "*"
+    "express"    : "*",
+    "pg"         : "~4.4.2"
   }
 }
