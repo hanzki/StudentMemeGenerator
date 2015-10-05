@@ -7,13 +7,25 @@ module.exports = {
         var query = client.query( "CREATE TABLE meme"+
                                     "("+
                                       "name character varying(50),"+
-                                      "text character varying(20),"+
+                                      "text character varying(100),"+
                                       "date character varying(30),"+
                                       "id serial NOT NULL"+
                                     ")");
         query.on("end", function (result) {
             client.end();
             res.write('Table Schema Created');
+            res.end();
+        });
+    },
+    dropTable : function(req, res){
+        var pg = require('pg');
+        var conString = process.env.DATABASE_URL;
+        var client = new pg.Client(conString);
+        client.connect();
+        var query = client.query( "Drop TABLE meme");
+        query.on("end", function (result) {
+            client.end();
+            res.write('Table Schema Deleted');
             res.end();
         });
     },
@@ -46,5 +58,17 @@ module.exports = {
             res.write(JSON.stringify(result.rows, null, "    ") + "\n");
             res.end();
         });
-  }
+    },
+    delRecord : function(req, res){
+        var pg = require('pg');
+        var conString = process.env.DATABASE_URL;
+        var client = new pg.Client(conString);
+        client.connect();
+        var query = client.query( "Delete from employee Where id ="+req.query.id);
+        query.on("end", function (result) {
+            client.end();
+            res.write('Success');
+            res.end();
+        });
+    }
 };
