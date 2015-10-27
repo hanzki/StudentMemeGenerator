@@ -18,8 +18,9 @@ if (!global.hasOwnProperty('db')) {
   global.db = {
     Sequelize: Sequelize,
     sequelize: sequelize,
-    //User:      sequelize.import(__dirname + '/user')
-    // add your other models here
+    memes:      sequelize.import(__dirname + '/memes'),
+    images:     sequelize.import(__dirname + '/images'),
+    meme_texts:      sequelize.import(__dirname + '/mene_texts')
   }
 
   /*
