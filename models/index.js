@@ -20,7 +20,7 @@ if (!global.hasOwnProperty('db')) {
     sequelize: sequelize,
     memes:      sequelize.import(__dirname + '/memes'),
     images:     sequelize.import(__dirname + '/images'),
-    meme_texts:      sequelize.import(__dirname + '/mene_texts')
+    meme_texts:      sequelize.import(__dirname + '/meme_texts')
   }
 
   /*
