@@ -11,7 +11,10 @@ if (!global.hasOwnProperty('db')) {
       protocol: 'postgres',
       port:     match[4],
       host:     match[3],
-      logging:  true //false
+      logging:  false
+      dialectOptions: {
+          ssl: true
+      }
     })
   }
 
