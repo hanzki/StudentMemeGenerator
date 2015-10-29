@@ -32,5 +32,15 @@ var db = app.get('models');
 db.sequelize.sync().then(function() {
   http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
+
+    // an example of saving
+    var image = db.images.build({filename: 'very important task'})
+    image.save()
+    .then(function(o){
+            console.log("saved");
+    }).error(function(error) {
+            console.log("++++++++++");
+    });
+
   });
 });
