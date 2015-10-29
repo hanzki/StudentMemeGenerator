@@ -28,8 +28,12 @@ if (!global.hasOwnProperty('db')) {
 
   /*
     Associations can be defined here. E.g. like this:
-    global.db.User.hasMany(global.db.SomethingElse)
+    global.db.memes.hasMany(global.db.images)
+    global.db.memes.hasMany(global.db.meme_texts)
+    global.db.images.belongsTo(global.db.memes)
+    global.db.meme_texts.belongsTo(global.db.memes)
   */
+
 }
 
 module.exports = global.db
