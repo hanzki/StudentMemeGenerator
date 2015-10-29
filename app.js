@@ -7,10 +7,10 @@
 var express = require('express');
 var app     = express();
 var http    = require('http');
-var db = require('./models');
 //var routes = require('./routes/index');
 
 app.set('port', (process.env.PORT || 5000));
+app.set('models', require('./models'));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
@@ -26,6 +26,8 @@ app.get('/', function(request, response) {
 // app.listen(app.get('port'), function() {
 //   console.log('Node app is running on port', app.get('port'));
 // });
+
+var db = app.get('models');
 
 db.sequelize.sync().then(function() {
   http.createServer(app).listen(app.get('port'), function(){
