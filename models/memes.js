@@ -4,4 +4,4 @@ module.exports = function(sequelize, DataTypes) {
     top_text_id     : DataTypes.INTEGER,
     bottom_text_id  : DataTypes.INTEGER,
   })
-}
+};
