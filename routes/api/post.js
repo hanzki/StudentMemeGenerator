@@ -1,5 +1,8 @@
 var db = require('../../models');
 
+// This is an example file. It is not needed or used in the student meme generator!
+
+
 module.exports.addPost = function(req, res) {
 	var post = db.posts.build(req.body);
 	post.save().then(function() {
