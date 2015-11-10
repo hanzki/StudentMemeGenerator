@@ -21,9 +21,9 @@ router.route('/images')
 		.post(function(req,res) { images.addImage(req,res) })
 		.get(function(req,res) { images.getAllImages(req,res) });
 
-/* Images routes */
+/* Memes routes */
 router.route('/memes')
 		.post(function(req,res) { memes.addMeme(req,res) })
-		.get(function(req,res) { memes.getAllMemess(req,res) });
+		.get(function(req,res) { memes.getAllMemes(req,res) });
 
 module.exports = router;
