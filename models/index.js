@@ -15,11 +15,13 @@ if (!global.hasOwnProperty('db')) {
 
   /*
     Associations can be defined here. E.g. like this:
-    global.db.memes.hasMany(global.db.images)
-    global.db.memes.hasMany(global.db.meme_texts)
+      */
+    global.db.memes.hasOne(global.db.images, {foreignKey: 'image_id'})
+    global.db.memes.hasMany(global.db.meme_texts, {foreignKey: 'top_text_id'})
+    global.db.memes.hasMany(global.db.meme_texts, {foreignKey: 'bottom_text_id'})
     global.db.images.belongsTo(global.db.memes)
     global.db.meme_texts.belongsTo(global.db.memes)
-  */
+
 
 }
 
