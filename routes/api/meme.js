@@ -3,33 +3,28 @@ var db = require('../../models');
 module.exports.addMeme = function(req, res) {
     //TODO create meme
     // res.sendStatus(503)
-
-    var top_text = db.meme_texts.build({text:'top'})
-    top_text.save().then(function() {
-        var bottom_text = db.meme_texts.build({text:'bottom'});
-        bottom_text.save().then(function() {
-            var images = db.images.build({filename:'test'});
-            images.save().then(function() {
-                var memes = db.memes.build({
-                    image_id:images.id,
-                    top_text_id:top_text.id,
-                    bottom_text_id:bottom_text.id
-                });
-                memes.save().then(function() {
+    db.meme_texts.create({text:req.body.top}).then(function(top_text) {
+        db.meme_texts.create({text:req.body.bottom}).then(function(bottom_text) {
+            db.images.create({filename:req.body.image}).then(function(images) {
+                db.memes.create({image_id:images.id,top_text_id:top_text.id,bottom_text_id:bottom_text.id}).then(function(memes) {
+                    memes.setImages(images);
                     res.json({memes: memes});
                 }).catch(function(err) {
+                    console.log("meme fail");
                     res.status(400).send(err);
                 });
             }).catch(function(err) {
+                console.log("image fail");
                 res.status(400).send(err);
             });
         }).catch(function(err) {
-    		res.status(400).send(err);
-    	});
-	}).catch(function(err) {
-		res.status(400).send(err);
-	});
-
+            console.log("bottom text fail");
+            res.status(400).send(err);
+        });
+    }).catch(function(err) {
+        console.log("top text fail");
+        res.status(400).send(err);
+    });
 
 
 };
