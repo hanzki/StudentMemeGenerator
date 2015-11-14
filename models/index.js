@@ -16,6 +16,8 @@ if (!global.hasOwnProperty('db')) {
   /* Associations */
     //global.db.images.hasMany(global.db.memes);
     global.db.memes.belongsTo(global.db.images,{as:"Images"});
+    global.db.memes.belongsTo(global.db.meme_texts,{as:"TopText"});
+    global.db.memes.belongsTo(global.db.meme_texts,{as:"BottomText"});
 
 
 }

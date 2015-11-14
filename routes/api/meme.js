@@ -8,6 +8,8 @@ module.exports.addMeme = function(req, res) {
             db.images.create({filename:req.body.image}).then(function(images) {
                 db.memes.create({image_id:images.id,top_text_id:top_text.id,bottom_text_id:bottom_text.id}).then(function(memes) {
                     memes.setImages(images);
+                    memes.setTopText(top_text);
+                    memes.setBottomText(bottom_text);
                     res.json({memes: memes});
                 }).catch(function(err) {
                     console.log("meme fail");
