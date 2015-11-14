@@ -39,9 +39,14 @@ module.exports.getAllMemes = function(req, res) {
 
 
 module.exports.getSingleMeme = function(req, res, id) {
-	db.memes.findById(id).then(function(meme) {
-		res.json({meme: meme});
+    // ACHTUNG!!!HUOM!!!
+    // model here is db.xx, not just the name of the model
+
+	db.memes.findOne({where:{id:id}, include: [{ all: true }] }).then(function(meme) {
+
+        res.json({meme: meme});
+
 	}).catch(function(err) {
-		res.status(400).send(err);
+		res.json({});
 	});
 };
