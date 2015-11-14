@@ -36,3 +36,12 @@ module.exports.getAllMemes = function(req, res) {
         res.status(400).send(err);
     });
 };
+
+
+module.exports.getSingleMeme = function(req, res, id) {
+	db.memes.findById(id).then(function(meme) {
+		res.json({meme: meme});
+	}).catch(function(err) {
+		res.status(400).send(err);
+	});
+};

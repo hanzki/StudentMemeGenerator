@@ -26,4 +26,11 @@ router.route('/memes')
 		.post(function(req,res) { memes.addMeme(req,res) })
 		.get(function(req,res) { memes.getAllMemes(req,res) });
 
+
+/* Single memes routes */
+router.route('/memes/:meme_id')
+	.get(function(req, res) { memes.getSingleMeme(req, res, req.params.meme_id) })
+	.put(function(req, res) { memes.updateMeme(req, res, req.params.meme_id) })
+	.delete(function(req, res) { memes.deleteMeme(req, res, req.params.meme_id) });
+
 module.exports = router;
