@@ -21,6 +21,10 @@ router.route('/images')
 		.post(function(req,res) { images.addImage(req,res) })
 		.get(function(req,res) { images.getAllImages(req,res) });
 
+/* Single image routes */
+router.route('/images/:image_id')
+	.get(function(req, res) { images.getSingleImage(req, res, req.params.image_id) })
+
 /* Memes routes */
 router.route('/memes')
 		.post(function(req,res) { memes.addMeme(req,res) })
