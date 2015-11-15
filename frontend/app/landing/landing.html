@@ -1,5 +1,32 @@
-<h1>Student Meme Generator</h1>
+<div class="row">
+    <div class="col s10 offset-s1 center">
+        <h1>Student Meme Generator</h1>
+    </div>
+</div>
 
-<p>Have a nice day</p>
+<div class="row">
+    <div class="col s12 center">
+        <a ui-sref="view1" class="waves-effect waves-light btn-large">Create Meme</a>
+    </div>
+</div>
 
-<a ui-sref="view1">link</a>
+<div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 center">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. Sed augue orci, lacinia eu tincidunt et eleifend nec lacus. Donec ultricies nisl ut felis, suspendisse potenti. Lorem ipsum ligula ut hendrerit mollis, ipsum erat vehicula risus, eu suscipit sem libero nec erat. Aliquam erat volutpat. Sed congue augue vitae neque. Nulla consectetuer porttitor pede. Fusce purus morbi tortor magna condimentum vel, placerat id blandit sit amet tortor.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col m12 l4 center">
+        <h4>Best 24h</h4>
+        <img class="meme-img-small" ng-repeat="meme in memes24h" src="{{ meme.url }}">
+    </div>
+    <div class="col m12 l4 center">
+        <h4>Best 7d</h4>
+        <img class="meme-img-small" ng-repeat="meme in memes7d" src="{{ meme.url }}">
+    </div>
+    <div class="col m12 l4 center">
+        <h4>Best 30d</h4>
+        <img class="meme-img-small" ng-repeat="meme in memes30d" src="{{ meme.url }}">
+    </div>
+</div>

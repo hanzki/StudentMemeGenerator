@@ -28,3 +28,24 @@
   content: "";
   padding: 0;
 }
+
+body {
+  background-color: #FF671F;
+}
+
+.btn, .btn-large {
+  background-color: #78BE20;
+}
+.btn:hover, .btn-large:hover {
+  background-color: #79c724;;
+}
+
+#mainContainer {
+  background-color: white;
+}
+
+.meme-img-small {
+  max-width: 400px;
+  width: 100%;
+  padding: 1em;
+}
