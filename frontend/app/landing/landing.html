@@ -19,17 +19,14 @@
 <div class="row">
     <div class="col m12 l4 center">
         <h4>Best 24h</h4>
-        <img class="meme-img-small" src="http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg">
-        <img class="meme-img-small" src="http://contexts.org/files/2013/11/JAR-meme-drunk-baby.jpeg">
+        <img class="meme-img-small" ng-repeat="meme in memes24h" src="{{ meme.url }}">
     </div>
     <div class="col m12 l4 center">
         <h4>Best 7d</h4>
-        <img class="meme-img-small" src="http://www.newslinq.com/wp-content/uploads/2014/06/ex-girlfriend-meme-14.jpg">
-        <img class="meme-img-small" src="http://memesvault.com/wp-content/uploads/Funny-Meme-3.jpg">
+        <img class="meme-img-small" ng-repeat="meme in memes7d" src="{{ meme.url }}">
     </div>
     <div class="col m12 l4 center">
         <h4>Best 30d</h4>
-        <img class="meme-img-small" src="http://static.fjcdn.com/pictures/It+s+an+old+meme+how+i+feel+when+i+see_e83de6_3481193.jpg">
-        <img class="meme-img-small" src="http://www.styleite.com/wp-content/uploads/2014/07/confused-face-meme-girl-788x565.png">
+        <img class="meme-img-small" ng-repeat="meme in memes30d" src="{{ meme.url }}">
     </div>
 </div>
