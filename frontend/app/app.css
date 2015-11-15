@@ -28,3 +28,12 @@
   content: "";
   padding: 0;
 }
+
+#mainContainer {
+}
+
+.meme-img-small {
+  max-width: 400px;
+  width: 100%;
+  padding: 1em;
+}
