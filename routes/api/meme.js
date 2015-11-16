@@ -39,6 +39,9 @@ module.exports.getAllMemes = function(req, res) {
 
 
 module.exports.getSingleMeme = function(req, res, id) {
+
+    /* sequelize doc: eager loading */
+
     // ACHTUNG!!!HUOM!!!
     // model here is db.xx, not just the name of the model
 
