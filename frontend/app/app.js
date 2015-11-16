@@ -3,7 +3,9 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
     'ui.router',
+    'ui.materialize',
     'myApp.landing',
+    'myApp.imageSelection',
     'myApp.view1',
     'myApp.view2',
     'myApp.version'
@@ -16,6 +18,11 @@ config( function($stateProvider, $urlRouterProvider, $locationProvider) {
         url: "/",
         templateUrl: 'landing/landing.html',
         controller: 'LandingCtrl'
+    }).
+    state('imageSelection', {
+        url: "/make-meme/image",
+        templateUrl: 'imageSelection/imageSelection.html',
+        controller: 'ImageSelectionCtrl'
     }).
     state('view1', {
         url: "/view1",

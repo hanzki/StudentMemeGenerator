@@ -45,7 +45,16 @@ body {
 }
 
 .meme-img-small {
-  max-width: 400px;
+  max-width: 300px;
   width: 100%;
   padding: 1em;
+}
+
+.meme-template-img {
+  max-width: 250px;
+  width: 100%;
+  margin: 1em;
+}
+.meme-template-img:hover {
+  cursor: pointer;
 }

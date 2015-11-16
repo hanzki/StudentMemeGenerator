@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col s12 center">
+        <h2>1. Select Your Image</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 center">
+        <a href="#newImageModal" class="waves-effect waves-light btn" modal>Upload new image</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s10 offset-s1 center">
+        <img class="meme-template-img z-depth-1 hoverable"
+             ng-repeat="image in images"
+             ng-src="{{ image.url }}"
+             ng-click="chooseImage(image.id)"
+        >
+    </div>
+</div>
+
+<div id="newImageModal" class="modal">
+    <div class="modal-content">
+        <h4>Upload Image</h4>
+        <p>Choose an image you want to upload</p>
+        <input type="file" id="newImage" name="newImage"/>
+        <a class="btn" ng-click="uploadImage()">Upload Image</a>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
