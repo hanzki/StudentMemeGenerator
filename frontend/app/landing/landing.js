@@ -2,7 +2,7 @@
 
 angular.module('myApp.landing', ["ui.router"])
 
-    .controller('LandingCtrl', ["$scope", function($scope) {
+    .controller('LandingCtrl', ["$scope", "$state", function($scope, $state) {
 
         function mockMeme(url) {
             return {
@@ -13,6 +13,10 @@ angular.module('myApp.landing', ["ui.router"])
                 bottomText: "else"
             };
         }
+
+        $scope.openMeme = function (id) {
+            $state.go("meme", {id: id});
+        };
 
         $scope.memes24h = [
                 mockMeme("http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg"),

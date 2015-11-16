@@ -19,14 +19,26 @@
 <div class="row">
     <div class="col m12 l4 center">
         <h4>Best 24h</h4>
-        <img class="meme-img-small" ng-repeat="meme in memes24h" ng-src="{{ meme.url }}">
+        <img class="meme-img-small clickable"
+             ng-repeat="meme in memes24h"
+             ng-src="{{ meme.url }}"
+             ng-click="openMeme(meme.id)"
+        >
     </div>
     <div class="col m12 l4 center">
         <h4>Best 7d</h4>
-        <img class="meme-img-small" ng-repeat="meme in memes7d" ng-src="{{ meme.url }}">
+        <img class="meme-img-small clickable"
+             ng-repeat="meme in memes7d"
+             ng-src="{{ meme.url }}"
+             ng-click="openMeme(meme.id)"
+        >
     </div>
     <div class="col m12 l4 center">
         <h4>Best 30d</h4>
-        <img class="meme-img-small" ng-repeat="meme in memes30d" ng-src="{{ meme.url }}">
+        <img class="meme-img-small clickable"
+             ng-repeat="meme in memes30d"
+             ng-src="{{ meme.url }}"
+             ng-click="openMeme(meme.id)"
+        >
     </div>
 </div>
