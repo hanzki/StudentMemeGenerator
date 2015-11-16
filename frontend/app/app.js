@@ -6,6 +6,7 @@ angular.module('myApp', [
     'ui.materialize',
     'myApp.landing',
     'myApp.imageSelection',
+    'myApp.textEdit',
     'myApp.meme',
     'myApp.view1',
     'myApp.view2',
@@ -24,6 +25,11 @@ config( function($stateProvider, $urlRouterProvider, $locationProvider) {
         url: "/make-meme/image",
         templateUrl: 'imageSelection/imageSelection.html',
         controller: 'ImageSelectionCtrl'
+    }).
+    state('textEdit', {
+        url: "/make-meme/text",
+        templateUrl: 'textEdit/textEdit.html',
+        controller: 'TextEditCtrl'
     }).
     state('meme', {
         url: "/meme/{id:int}",
