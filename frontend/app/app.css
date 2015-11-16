@@ -33,6 +33,7 @@ body {
   background-color: #FF671F;
 }
 
+
 .btn, .btn-large {
   background-color: #78BE20;
 }
@@ -42,6 +43,7 @@ body {
 
 #mainContainer {
   background-color: white;
+  padding: 20px 0;
 }
 
 .clickable:hover {
@@ -68,4 +70,21 @@ body {
 
 .meme-editor-img {
   width: 100%;
+}
+
+footer.page-footer {
+  background-color: hsla(262,45%,45%,1);
+  margin-top: 0;
+}
+
+nav.top-nav {
+  height: 122px;
+  box-shadow: none;
+  background-color: hsla(262,45%,45%,1);
+}
+
+.page-title {
+  line-height: 122px;
+  font-size: 48px;
+  margin-left: 1em;
 }
