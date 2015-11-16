@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col s12 center">
+        <h2>2. Add Text To Image</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s4 offset-s2 center">
+        <img class="meme-editor-img" ng-src="{{ image.url}}">
+    </div>
+    <div class="col s4 center">
+        <input placeholder="Top Text" ng-model="meme.topText" type="text">
+        <input placeholder="Bottom Text" ng-model="meme.bottomText" id="bottomText" type="text">
+        <a class="waves-effect waves-light btn" ng-click="createMeme()">Create Meme</a>
+    </div>
+</div>

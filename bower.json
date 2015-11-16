@@ -12,6 +12,7 @@
     "angular-mocks": "~1.4.0",
     "ui-router": "~0.2.15",
     "html5-boilerplate": "~5.2.0",
+    "materialize": "0.97.2",
     "angular-materialize": "*"
   }
 }

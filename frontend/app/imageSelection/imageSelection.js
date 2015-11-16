@@ -13,7 +13,7 @@ angular.module('myApp.imageSelection', ["ui.router"])
 
         $scope.chooseImage = function (id) {
             console.log("chose image id=" + id);
-            $state.go("landing");
+            $state.go("textEdit");
         };
 
         $scope.uploadImage = function () {
