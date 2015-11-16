@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define("images", {
+  return sequelize.define("Image", {
     filename        : DataTypes.STRING
   })
 };
