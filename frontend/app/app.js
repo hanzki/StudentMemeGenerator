@@ -6,6 +6,7 @@ angular.module('myApp', [
     'ui.materialize',
     'myApp.landing',
     'myApp.imageSelection',
+    'myApp.meme',
     'myApp.view1',
     'myApp.view2',
     'myApp.version'
@@ -23,6 +24,11 @@ config( function($stateProvider, $urlRouterProvider, $locationProvider) {
         url: "/make-meme/image",
         templateUrl: 'imageSelection/imageSelection.html',
         controller: 'ImageSelectionCtrl'
+    }).
+    state('meme', {
+        url: "/meme/{id:int}",
+        templateUrl: 'meme/meme.html',
+        controller: 'MemeCtrl'
     }).
     state('view1', {
         url: "/view1",

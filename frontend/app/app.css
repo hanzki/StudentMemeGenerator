@@ -44,17 +44,24 @@ body {
   background-color: white;
 }
 
+.clickable:hover {
+  cursor: pointer;
+}
+
 .meme-img-small {
   max-width: 300px;
   width: 100%;
-  padding: 1em;
+  margin: 1em;
+}
+
+.meme-img-large {
+  max-width: 500px;
+  width: 100%;
+  margin: 1em;
 }
 
 .meme-template-img {
   max-width: 250px;
   width: 100%;
   margin: 1em;
-}
-.meme-template-img:hover {
-  cursor: pointer;
 }
