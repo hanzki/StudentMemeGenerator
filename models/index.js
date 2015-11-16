@@ -13,13 +13,12 @@ if (!global.hasOwnProperty('db')) {
     posts:      sequelize.import(__dirname + '/post')
   };
 
-  /*
-    Associations can be defined here. E.g. like this:
-    global.db.memes.hasMany(global.db.images)
-    global.db.memes.hasMany(global.db.meme_texts)
-    global.db.images.belongsTo(global.db.memes)
-    global.db.meme_texts.belongsTo(global.db.memes)
-  */
+  /* Associations */
+    //global.db.images.hasMany(global.db.memes);
+    global.db.memes.belongsTo(global.db.images);
+    global.db.memes.belongsTo(global.db.meme_texts,{as:"TopText"});
+    global.db.memes.belongsTo(global.db.meme_texts,{as:"BottomText"});
+
 
 }
 

@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define("meme_texts", {
+  return sequelize.define("Meme_text", {
     text            : DataTypes.STRING
   })
 };

@@ -14,3 +14,11 @@ module.exports.getAllImages = function(req, res) {
         res.status(400).send(err);
     });
 };
+
+module.exports.getSingleImage = function(req, res, id) {
+    db.images.findById(id).then(function(image) {
+        res.json({image: image});
+    }).catch(function(err) {
+        res.status(400).send(err);
+    });
+};

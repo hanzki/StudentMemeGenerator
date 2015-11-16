@@ -21,9 +21,20 @@ router.route('/images')
 		.post(function(req,res) { images.addImage(req,res) })
 		.get(function(req,res) { images.getAllImages(req,res) });
 
-/* Images routes */
+/* Single image routes */
+router.route('/images/:image_id')
+	.get(function(req, res) { images.getSingleImage(req, res, req.params.image_id) })
+
+/* Memes routes */
 router.route('/memes')
 		.post(function(req,res) { memes.addMeme(req,res) })
-		.get(function(req,res) { memes.getAllMemess(req,res) });
+		.get(function(req,res) { memes.getAllMemes(req,res) });
+
+
+/* Single memes routes */
+router.route('/memes/:meme_id')
+	.get(function(req, res) { memes.getSingleMeme(req, res, req.params.meme_id) })
+	.put(function(req, res) { memes.updateMeme(req, res, req.params.meme_id) })
+	.delete(function(req, res) { memes.deleteMeme(req, res, req.params.meme_id) });
 
 module.exports = router;
