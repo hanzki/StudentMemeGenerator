@@ -43,9 +43,17 @@ module.exports.getAllImages = function(req, res) {
 };
 
 module.exports.getSingleImage = function(req, res, id) {
+
+    // dummy data
+    res.json({
+        "id":id,
+        "url":"http://bit.ly/1HU34GZ"
+    });
+    /*
     db.images.findById(id).then(function(image) {
         res.json(apiImage(image));
     }).catch(function(err) {
         res.status(400).send(err);
     });
+    */
 };
