@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col s12 center">
-        <h2>2. Add Text To Image</h2>
+        <h3>2. Add Text To Image</h3>
     </div>
 </div>
 
@@ -11,6 +11,7 @@
     <div class="col s4 center">
         <input placeholder="Top Text" ng-model="meme.topText" type="text">
         <input placeholder="Bottom Text" ng-model="meme.bottomText" id="bottomText" type="text">
-        <a class="waves-effect waves-light btn" ng-click="createMeme()">Create Meme</a>
+        <a ui-sref="imageSelection" class="waves-effect waves-light btn btn-secondary">Cancel <i class="material-icons right">clear</i></a>
+        <a class="waves-effect waves-light btn" ng-click="createMeme()">Done <i class="material-icons large right">done</i></a>
     </div>
 </div>
