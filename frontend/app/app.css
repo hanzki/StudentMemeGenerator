@@ -90,6 +90,11 @@ body {
 .meme-editor-img {
   width: 100%;
 }
+.meme-editor-div {
+  height: 300px;
+  width: 300px;
+  background-size:cover;
+}
 
 footer.page-footer {
   background-color: hsla(262,45%,45%,1);
@@ -110,7 +115,7 @@ nav.top-nav {
 
 .memetxt{
   font-family: 'Impact', 'Arial Black';
-  font-size: 4em;
+  font-size: 3em;
   color: #fff;
   text-shadow:
     -1px -1px 0 #000,
@@ -119,7 +124,9 @@ nav.top-nav {
     1px 1px 0 #000;
   text-transform: uppercase;
 }
-
+.memetxt.top{
+  margin-top: 0%;
+}
 .memetxt.bottom{
-  margin-top: 60%;
+  margin-top: 55%;
 }
