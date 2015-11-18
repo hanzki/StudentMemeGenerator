@@ -38,7 +38,18 @@ body {
   background-color: #78BE20;
 }
 .btn:hover, .btn-large:hover {
-  background-color: #79c724;;
+  background-color: #79c724;
+}
+
+.btn-large {
+  font-size: 140%;
+}
+
+.btn-secondary{
+  background-color: #757575;
+}
+.btn-secondary:hover{
+  background-color: #959595;
 }
 
 #mainContainer {
@@ -62,6 +73,14 @@ body {
   margin: 1em;
 }
 
+.meme-img-div {
+  max-width: 500px;
+  height: 500px;
+  width: 100%;
+  margin: auto;
+  background-size:cover;
+}
+
 .meme-template-img {
   max-width: 250px;
   width: 100%;
@@ -70,6 +89,11 @@ body {
 
 .meme-editor-img {
   width: 100%;
+}
+.meme-editor-div {
+  height: 300px;
+  width: 300px;
+  background-size:cover;
 }
 
 footer.page-footer {
@@ -86,5 +110,23 @@ nav.top-nav {
 .page-title {
   line-height: 122px;
   font-size: 48px;
-  margin-left: 1em;
+  /*margin-left: 1em;*/
+}
+
+.memetxt{
+  font-family: 'Impact', 'Arial Black';
+  font-size: 3em;
+  color: #fff;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  text-transform: uppercase;
+}
+.memetxt.top{
+  margin-top: 0%;
+}
+.memetxt.bottom{
+  margin-top: 55%;
 }

@@ -27,6 +27,12 @@ angular.module('myApp.imageSelection', ["ui.router"])
             r.readAsArrayBuffer(f);
         };
 
+        $scope.fileNameChanged = function () {
+            if(document.getElementById('newImage').files.length > 0){
+                console.log("change upload button class");
+            }
+        };
+
         $scope.images = [
             mockImage("https://i.imgflip.com/2/1bij.jpg"),
             mockImage("https://i.imgflip.com/2/9ehk.jpg"),
@@ -37,6 +43,6 @@ angular.module('myApp.imageSelection', ["ui.router"])
             mockImage("https://i.imgflip.com/2/39t1o.jpg"),
             mockImage("https://i.imgflip.com/2/1bhf.jpg"),
             mockImage("https://i.imgflip.com/2/1bh3.jpg")
-        ]
+        ];
 
     }]);

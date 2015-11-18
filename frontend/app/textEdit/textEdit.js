@@ -16,7 +16,8 @@ angular.module('myApp.textEdit', ["ui.router"])
         };
 
         $scope.meme = {
-            imageId: $scope.image.id
+            imageId: $scope.image.id,
+            topText: ''
         }
 
     }]);
