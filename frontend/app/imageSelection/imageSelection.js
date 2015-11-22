@@ -1,8 +1,9 @@
 'use strict';
 
-angular.module('myApp.imageSelection', ["ui.router"])
+angular.module('myApp.imageSelection', ["ui.router", "ngFileUpload"])
 
-    .controller('ImageSelectionCtrl', ["$scope", "$state", function($scope, $state) {
+    .controller('ImageSelectionCtrl', ["Upload","$scope", "$state", "$http",
+        function(Upload, $scope, $state, $http) {
 
         function mockImage(url) {
             return {
@@ -16,20 +17,19 @@ angular.module('myApp.imageSelection', ["ui.router"])
             $state.go("textEdit");
         };
 
-        $scope.uploadImage = function () {
-            var f = document.getElementById('newImage').files[0],
-                r = new FileReader();
-            r.onloadend = function(e){
-                var data = e.target.result;
-                //send you binary data via $http or $resource or do anything else with it
-                console.log("image upload");
-            };
-            r.readAsArrayBuffer(f);
+        $scope.upload = function(file) {
+            Upload.upload({
+                    url: '/api/images', //node.js route
+                    file: file
+                })
+                .success(function(data) {
+                    console.log(data, 'uploaded');
+                });
         };
 
-        $scope.fileNameChanged = function () {
-            if(document.getElementById('newImage').files.length > 0){
-                console.log("change upload button class");
+        $scope.uploadImage = function () {
+            if (form.memeImage.willValidate && $scope.file) {
+                $scope.upload($scope.file);
             }
         };
 

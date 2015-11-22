@@ -5,6 +5,14 @@ var posts = require('./api/post');
 var images = require('./api/image');
 var memes = require('./api/meme');
 
+var multer = require('multer');
+var upload = multer({storage: multer.diskStorage({
+	destination: './uploads',
+	filename: function (req, file, cb) {
+		cb(null, file.originalname)
+	}
+})});
+
 /* Posts routes */
 router.route('/posts')
 	.post(function(req,res) { posts.addPost(req,res) })
@@ -18,7 +26,7 @@ router.route('/posts/:post_id')
 
 /* Images routes */
 router.route('/images')
-		.post(function(req,res) { images.addImage(req,res) })
+		.post( upload.single('file'), function(req,res) { images.addImage(req,res) })
 		.get(function(req,res) { images.getAllImages(req,res) });
 
 /* Single image routes */
