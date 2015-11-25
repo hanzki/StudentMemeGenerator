@@ -6,6 +6,7 @@ function apiImage(image) {
         url: 'uploads/' + image.filename
     }
 }
+
 module.exports.addImage = function(req, res) {
     console.log(req.file);
 

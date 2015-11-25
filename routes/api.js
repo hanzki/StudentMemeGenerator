@@ -26,7 +26,7 @@ router.route('/posts/:post_id')
 
 /* Images routes */
 router.route('/images')
-		.post( upload.single('file'), function(req,res) { images.addImage(req,res) })
+		.post( upload.single('memeImage'), function(req,res) { images.addImage(req,res) })
 		.get(function(req,res) { images.getAllImages(req,res) });
 
 /* Single image routes */
