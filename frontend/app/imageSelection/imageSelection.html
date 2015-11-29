@@ -24,8 +24,11 @@
     <div class="modal-content">
         <h4>Upload New Image</h4>
         <p>Choose an image you want to upload</p>
-        <input type="file" id="newImage" name="newImage" onchange="angular.element(this).scope().fileNameChanged()"/>
-        <a class="btn" ng-click="uploadImage()">Upload</a>
+        <form name="form">
+            <input type="file" name="memeImage" ngf-select ng-model="file"
+                   ngf-pattern="'image/*'" accept="image/*">
+            <input type="submit" class="btn" value="Upload" ng-click="uploadImage()">
+        </form>
     </div>
     <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>

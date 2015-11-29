@@ -1,15 +1,27 @@
 var db = require('../../models');
 
-module.exports.addImage = function(req, res) {
-    // TODO image upload
-    // TODO check https://github.com/expressjs/multer
+function apiImage(image) {
+    return {
+        id: image.id,
+        url: 'uploads/' + image.filename
+    }
+}
 
-    res.sendStatus(503)
+module.exports.addImage = function(req, res) {
+    console.log(req.file);
+
+    db.images.create({filename: req.file.originalname})
+        .then(function (image){
+            res.json(apiImage(image));
+        }).catch(function(err) {
+            console.log("image save fail");
+            res.status(400).send(err);
+        });
 };
 
 module.exports.getAllImages = function(req, res) {
     db.images.findAll().then(function(images) {
-        res.json({images: images});
+        res.json(images.map(apiImage));
     }).catch(function(err) {
         res.status(400).send(err);
     });
@@ -17,7 +29,7 @@ module.exports.getAllImages = function(req, res) {
 
 module.exports.getSingleImage = function(req, res, id) {
     db.images.findById(id).then(function(image) {
-        res.json({image: image});
+        res.json(apiImage(image));
     }).catch(function(err) {
         res.status(400).send(err);
     });
