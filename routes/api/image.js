@@ -26,7 +26,7 @@ module.exports.getAllImages = function(req, res) {
     for(var i = 0; i < 10; i++) {
         var image = {
             "id":i+1,
-            "url":"http://bit.ly/1HU34GZ"
+            "url":"http://bit.ly/1Od3DO4"
         };
         images.push(image);
     }
@@ -47,7 +47,7 @@ module.exports.getSingleImage = function(req, res, id) {
     // dummy data
     res.json({
         "id":id,
-        "url":"http://bit.ly/1HU34GZ"
+        "url":"http://bit.ly/1Od3DO4"
     });
     /*
     db.images.findById(id).then(function(image) {
