@@ -2,8 +2,8 @@
 
 angular.module('myApp.imageSelection', ["ui.router", "ngFileUpload"])
 
-    .controller('ImageSelectionCtrl', ["Upload","$scope", "$state", "$http",
-        function(Upload, $scope, $state, $http) {
+    .controller('ImageSelectionCtrl', ["$scope", "$state", "MemeService", "ImageService",
+        function($scope, $state, MemeService, ImageService) {
 
             function mockImage(url) {
                 return {
@@ -12,32 +12,29 @@ angular.module('myApp.imageSelection', ["ui.router", "ngFileUpload"])
                 };
             }
 
-            function upload(file, cb) {
-                Upload.upload({
-                        url: '/api/images', //node.js route
-                        data: {memeImage: file}
-                    })
-                    .success(function(image) {
-                        console.log(image, 'uploaded');
-                        cb(image);
-                    });
-            }
-
             $scope.chooseImage = function (id) {
                 console.log("chose image id=" + id);
+                MemeService.getAndClearCurrentMeme().imageId = id;
                 $state.go("textEdit");
             };
 
             $scope.uploadImage = function () {
                 if (form.memeImage.willValidate && $scope.file) {
-                    upload($scope.file, function(image) {
+                    ImageService.saveImage($scope.file, function(image) {
                         angular.element('#newImageModal').closeModal();
                         $scope.chooseImage(image.id);
                     });
                 }
             };
 
-            $scope.images = [
+            $scope.images = {};
+            ImageService.getImages(
+                function(images) {
+                    $scope.images = images;
+                }
+            );
+
+                /*[
                 mockImage("https://i.imgflip.com/2/1bij.jpg"),
                 mockImage("https://i.imgflip.com/2/9ehk.jpg"),
                 mockImage("https://i.imgflip.com/2/1bh8.jpg"),
@@ -47,6 +44,6 @@ angular.module('myApp.imageSelection', ["ui.router", "ngFileUpload"])
                 mockImage("https://i.imgflip.com/2/39t1o.jpg"),
                 mockImage("https://i.imgflip.com/2/1bhf.jpg"),
                 mockImage("https://i.imgflip.com/2/1bh3.jpg")
-            ];
+            ];*/
 
     }]);

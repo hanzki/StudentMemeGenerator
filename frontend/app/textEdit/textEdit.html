@@ -6,11 +6,12 @@
 
 <div class="row">
     <div class="col s4 offset-s2 center">
-        <!--<img class="meme-editor-img" ng-src="{{ image.url}}">-->
-        <div class="meme-editor-div" ng-style="{'background-image':'url({{ image.url }})'}">
+        <img class="meme-editor-img" ng-src="{{ image.url }}">
+        <!-- disabled text preview because the css style had some problem with the url coming from the service -->
+        <!--<div class="meme-editor-div" ng-style="{'background-image':'url({{ image.url }})'}">
             <div ng-if="meme.topText"><p class="memetxt top">{{ meme.topText }}</p></div>
             <div ng-if="meme.bottomText"><p class="memetxt bottom">{{ meme.bottomText }}</p></div>
-        </div>
+        </div>-->
     </div>
     <div class="col s4 center">
         <input placeholder="Top Text" ng-model="meme.topText" type="text">

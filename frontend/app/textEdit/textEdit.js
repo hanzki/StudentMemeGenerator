@@ -2,22 +2,26 @@
 
 angular.module('myApp.textEdit', ["ui.router"])
 
-    .controller('TextEditCtrl', ["$scope", "$state", function($scope, $state) {
+    .controller('TextEditCtrl', ["$scope", "$state", "MemeService", "ImageService",
+        function($scope, $state, MemeService, ImageService) {
 
-        $scope.createMeme = function () {
-            console.log("meme topText = " + $scope.meme.topText);
-            console.log("meme bottomText = " + $scope.meme.bottomText);
-            $state.go("meme", {id: Math.floor(Math.random() * 100)});
-        };
+            $scope.createMeme = function () {
+                console.log("meme topText = " + $scope.meme.topText);
+                console.log("meme bottomText = " + $scope.meme.bottomText);
+                $state.go("meme", {id: Math.floor(Math.random() * 100)});
+            };
 
-        $scope.image = {
-            id: Math.floor(Math.random() * 100),
-            url: "https://i.imgflip.com/2/1bij.jpg"
-        };
+            $scope.image = {};
 
-        $scope.meme = {
-            imageId: $scope.image.id,
-            topText: ''
-        }
+            $scope.meme = {
+                imageId: MemeService.getCurrentMeme().imageId,
+                topText: ''
+            };
 
-    }]);
+            ImageService.getImage(
+                MemeService.getCurrentMeme().imageId,
+                function(image) {
+                    $scope.image = image;
+                });
+
+        }]);
