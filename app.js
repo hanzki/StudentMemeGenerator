@@ -33,7 +33,7 @@ app.use(allowCrossDomain);
 
 app.use('/api', api);
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {redirect: false}));
+app.use('/files', express.static(path.join(__dirname, 'files'), {redirect: false}));
 
 app.use(express.static(path.join(__dirname, 'frontend/app'), {redirect: false}));
 

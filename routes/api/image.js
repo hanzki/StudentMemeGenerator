@@ -3,7 +3,7 @@ var db = require('../../models');
 function apiImage(image) {
     return {
         id: image.id,
-        url: 'uploads/' + image.filename
+        url: 'files/uploads/' + image.filename
     }
 }
 
