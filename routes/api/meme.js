@@ -18,7 +18,6 @@ module.exports.addMeme = function(req, res) {
                 res.json(apiMeme(meme));
             }
         );
-
     }).catch(function(err) {
         console.error("meme fail", err);
         res.status(400).send(err);
@@ -50,7 +49,7 @@ module.exports.getSingleMeme = function(req, res, id) {
 function apiMeme(meme) {
     return {
         id: meme.id,
-        url: "http://bit.ly/1HU34GZ",
+        url: meme.filename,
         imageId: meme.imageId,
         topText: meme.toptext,
         bottomText: meme.bottomtext
