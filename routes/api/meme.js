@@ -6,7 +6,7 @@ module.exports.addMeme = function(req, res) {
 
     //dummy data
     res.json({
-        "id":id,
+        "id":"1",
         "url":"http://bit.ly/1HU34GZ",
         "imageId":"1",
         "topText": "the problem with some people...",
