@@ -14,7 +14,9 @@ angular.module('myApp.imageSelection', ["ui.router", "ngFileUpload"])
 
             $scope.chooseImage = function (id) {
                 console.log("chose image id=" + id);
-                MemeService.getAndClearCurrentMeme().imageId = id;
+                var meme = MemeService.clearAndGetCurrentMeme();
+                meme.imageId = id;
+                MemeService.putCurrentMeme(meme);
                 $state.go("textEdit");
             };
 

@@ -11,7 +11,9 @@ angular.module('myApp.textEdit', ["ui.router"])
                 $state.go("meme", {id: Math.floor(Math.random() * 100)});
             };
 
-            $scope.image = {};
+            $scope.image = {
+                url: "https://i.imgflip.com/2/1bij.jpg"
+            };
 
             $scope.meme = {
                 imageId: MemeService.getCurrentMeme().imageId,

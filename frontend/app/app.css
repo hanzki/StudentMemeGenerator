@@ -1,5 +1,11 @@
 /* app css stylesheet */
 
+@font-face {
+  font-family: "Impact";
+  src: url("fonts/impact.ttf"),
+  url("fonts/impact.eot");
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

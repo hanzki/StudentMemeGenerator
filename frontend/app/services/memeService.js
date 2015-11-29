@@ -1,27 +1,30 @@
 'use strict';
 
-angular.module('myApp.memeService', [])
+angular.module('myApp.memeService', ['ngCookies'])
 
-    .service('MemeService', [ "$http", function($http){
+    .service('MemeService', [ "$http", "$cookies", function($http, $cookies){
 
-        var meme = {
-            imageId: undefined,
-            topText: undefined,
-            bottomText: undefined
-        };
+        var meme = $cookies.getObject('meme');
 
-        this.getAndClearCurrentMeme = function() {
+        this.clearAndGetCurrentMeme = function() {
             meme = {
               imageId: undefined,
               topText: undefined,
               bottomText: undefined
             };
 
+            $cookies.putObject('meme', meme);
+
             return meme;
         };
 
         this.getCurrentMeme = function() {
+            meme = $cookies.getObject('meme');
             return meme;
+        };
+
+        this.putCurrentMeme = function(meme) {
+            $cookies.putObject('meme', meme);
         };
 
         this.getMemes = function(cb) {
