@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 var app = require('../app');
-var db = require('../models')
+var db = require('../models');
+var fs = require('fs');
+
+//make sure the directory for memes exists
+if (!fs.existsSync('files/memes')){
+    fs.mkdirSync('files/memes');
+}
 
 app.set('port', process.env.PORT || 3000);
 
