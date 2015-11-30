@@ -8,6 +8,11 @@ funny meme pictures.
 You need to specify a postgresql database to be used by supplying a database url via 
 `DATABASE_URL` environmental variable or by modifying the default url in `models/index.js`
 
+The meme image generation needs imageMagick and ghostscript installed.  
+OSX: `brew install imagemagick ghostscript`  
+Ubuntu: `apt-get install imagemagick ghostscript`  
+RedHat and other yummy systems: `yum install imagemagick ghostscript`
+
 The application is started with command: `npm start`
 
 ## Backend REST API

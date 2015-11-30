@@ -6,9 +6,10 @@ angular.module('myApp.textEdit', ["ui.router"])
         function($scope, $state, MemeService, ImageService) {
 
             $scope.createMeme = function () {
-                console.log("meme topText = " + $scope.meme.topText);
-                console.log("meme bottomText = " + $scope.meme.bottomText);
-                $state.go("meme", {id: Math.floor(Math.random() * 100)});
+                MemeService.saveMeme($scope.meme, function(meme){
+                    console.log("created meme", meme);
+                    $state.go("meme", {id: meme.id});
+                });
             };
 
             $scope.image = {
@@ -17,13 +18,16 @@ angular.module('myApp.textEdit', ["ui.router"])
 
             $scope.meme = {
                 imageId: MemeService.getCurrentMeme().imageId,
-                topText: ''
+                topText: '',
+                bottomText: ''
             };
 
             ImageService.getImage(
                 MemeService.getCurrentMeme().imageId,
                 function(image) {
                     $scope.image = image;
-                });
+                }
+            );
 
-        }]);
+        }
+    ]);

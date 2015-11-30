@@ -12,9 +12,7 @@ if (!global.hasOwnProperty('db')) {
   };
 
   /* Associations */
-    //global.db.images.hasMany(global.db.memes);
     global.db.memes.belongsTo(global.db.images);
-
 
 }
 

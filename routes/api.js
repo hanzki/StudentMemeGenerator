@@ -6,7 +6,7 @@ var memes = require('./api/meme');
 
 var multer = require('multer');
 var upload = multer({storage: multer.diskStorage({
-	destination: './uploads',
+	destination: './files/uploads',
 	filename: function (req, file, cb) {
 		cb(null, file.originalname)
 	}
@@ -20,7 +20,7 @@ router.route('/images')
 
 /* Single image routes */
 router.route('/images/:image_id')
-	.get(function(req, res) { images.getSingleImage(req, res, req.params.image_id) })
+	.get(function(req, res) { images.getSingleImage(req, res, req.params.image_id) });
 
 /* Memes routes */
 router.route('/memes')
