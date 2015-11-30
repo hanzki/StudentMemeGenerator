@@ -9,7 +9,7 @@ module.exports.addMeme = function(req, res) {
 
         // the image here should be the id of an already existing/ newly uploaded image,
         // i.e. this image id should already be saved in db
-        meme.setimage(req.body.image);
+        meme.setImage(req.body.image);
 
         res.json(apiMeme(meme));
 

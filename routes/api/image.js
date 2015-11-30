@@ -20,8 +20,7 @@ module.exports.addImage = function(req, res) {
 };
 
 module.exports.getAllImages = function(req, res) {
-
-    
+  
     db.images.findAll().then(function(images) {
         res.json(images.map(apiImage));
     }).catch(function(err) {
@@ -31,8 +30,7 @@ module.exports.getAllImages = function(req, res) {
 };
 
 module.exports.getSingleImage = function(req, res, id) {
-
-    
+   
     db.images.findById(id).then(function(image) {
         res.json(apiImage(image));
     }).catch(function(err) {

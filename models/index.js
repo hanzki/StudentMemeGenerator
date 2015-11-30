@@ -2,7 +2,7 @@ if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize')
     , sequelize = null;
 
-  sequelize = new Sequelize(process.env.DATABASE_URL || "postgres://localhost:5432/meme_test");
+  sequelize = new Sequelize(process.env.DATABASE_URL || "postgres://username:password@host:port/dbname");
 
   global.db = {
     Sequelize:  Sequelize,
