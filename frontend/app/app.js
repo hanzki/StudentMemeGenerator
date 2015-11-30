@@ -8,9 +8,8 @@ angular.module('myApp', [
     'myApp.imageSelection',
     'myApp.textEdit',
     'myApp.meme',
-    'myApp.view1',
-    'myApp.view2',
-    'myApp.version'
+    'myApp.memeService',
+    'myApp.imageService'
 ]).
 config( function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
@@ -35,16 +34,6 @@ config( function($stateProvider, $urlRouterProvider, $locationProvider) {
         url: "/meme/{id:int}",
         templateUrl: 'meme/meme.html',
         controller: 'MemeCtrl'
-    }).
-    state('view1', {
-        url: "/view1",
-        templateUrl: 'view1/view1.html',
-        controller: 'View1Ctrl'
-    }).
-    state('view2', {
-        url: "/view2",
-        templateUrl: 'view2/view2.html',
-        controller: 'View2Ctrl'
     });
 
   $locationProvider.html5Mode({
