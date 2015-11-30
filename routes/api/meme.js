@@ -5,7 +5,7 @@ module.exports.addMeme = function(req, res) {
     // res.sendStatus(503)
 
     
-    db.memes.create({toptext:text:req.body.top,bottomtext:text:req.body.bottom}).then(function(meme) {
+    db.memes.create({toptext:req.body.top,bottomtext:req.body.bottom}).then(function(meme) {
 
         // the image here should be the id of an already existing/ newly uploaded image,
         // i.e. this image id should already be saved in db
