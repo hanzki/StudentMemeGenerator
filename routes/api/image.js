@@ -21,39 +21,22 @@ module.exports.addImage = function(req, res) {
 
 module.exports.getAllImages = function(req, res) {
 
-    // dummy data
-    var images = [];
-    for(var i = 0; i < 10; i++) {
-        var image = {
-            "id":i+1,
-            "url":"http://bit.ly/1Od3DO4"
-        };
-        images.push(image);
-    }
-
-    res.json(images);
-
-    /*
+    
     db.images.findAll().then(function(images) {
         res.json(images.map(apiImage));
     }).catch(function(err) {
         res.status(400).send(err);
     });
-    */
+    
 };
 
 module.exports.getSingleImage = function(req, res, id) {
 
-    // dummy data
-    res.json({
-        "id":id,
-        "url":"http://bit.ly/1Od3DO4"
-    });
-    /*
+    
     db.images.findById(id).then(function(image) {
         res.json(apiImage(image));
     }).catch(function(err) {
         res.status(400).send(err);
     });
-    */
+    
 };

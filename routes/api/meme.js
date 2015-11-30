@@ -26,13 +26,7 @@ module.exports.getAllMemes = function(req, res) {
 
     
     db.memes.findAll().then(function(memes) {
-
-        var result = [];
-        memes.forEach(function(meme) {
-            result.push(apiMeme(meme));
-        });
-
-        res.json(result);
+        res.json(memes.map(apiMeme));
     }).catch(function(err) {
         res.status(400).send(err);
     });
