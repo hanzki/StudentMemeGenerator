@@ -8,16 +8,12 @@ if (!global.hasOwnProperty('db')) {
     Sequelize:  Sequelize,
     sequelize:  sequelize,
     memes:      sequelize.import(__dirname + '/memes'),
-    images:     sequelize.import(__dirname + '/images'),
-    meme_texts: sequelize.import(__dirname + '/meme_texts'),
-    posts:      sequelize.import(__dirname + '/post')
+    images:     sequelize.import(__dirname + '/images')
   };
 
   /* Associations */
     //global.db.images.hasMany(global.db.memes);
     global.db.memes.belongsTo(global.db.images);
-    global.db.memes.belongsTo(global.db.meme_texts,{as:"TopText"});
-    global.db.memes.belongsTo(global.db.meme_texts,{as:"BottomText"});
 
 
 }

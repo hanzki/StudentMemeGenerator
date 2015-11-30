@@ -69,7 +69,7 @@ Returns a meme matching the requested `id` as an *Meme* object
 
 *Contents*  
 `id` is the id of the meme  
-`url` is the full url to the meme
+`url` is the full url to the meme  
 `imageId` is the id of the image used  
 `topText` is the text written in the top half of the meme picture  
 `bottomText` is the text written in the bottom half of the meme picture
