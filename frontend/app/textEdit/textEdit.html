@@ -5,16 +5,21 @@
 </div>
 
 <div class="row">
-    <div class="col s4 offset-s2 center">
+    <div class="col s12 l6 left center">
         <div class="meme-editor-div" ng-style="{'background-image':'url(' + image.url + ')'}">
             <div ng-if="meme.topText"><p class="memetxt top">{{ meme.topText }}</p></div>
             <div ng-if="meme.bottomText"><p class="memetxt bottom">{{ meme.bottomText }}</p></div>
         </div>
     </div>
-    <div class="col s4 center">
-        <input placeholder="Top Text" ng-model="meme.topText" id="topText" type="text">
-        <input placeholder="Bottom Text" ng-model="meme.bottomText" id="bottomText" type="text">
-        <a ui-sref="imageSelection" class="waves-effect waves-light btn btn-secondary">Cancel <i class="material-icons right">clear</i></a>
-        <a class="waves-effect waves-light btn" ng-click="createMeme()">Done <i class="material-icons large right">done</i></a>
+    <div class="col s12 l6 right center">
+        <p><br></p>
+        <input placeholder="TOP TEXT" ng-model="meme.topText" id="topText" type="text"><br>
+        <input placeholder="BOTTOM TEXT" ng-model="meme.bottomText" id="bottomText" type="text">
+        <p>
+            <a ui-sref="imageSelection" class="waves-effect waves-light btn btn-secondary">
+                Cancel <i class="material-icons right">clear</i></a>
+            <a class="waves-effect waves-light btn" ng-click="createMeme()">
+                Done <i class="material-icons large right">done</i></a>
+        </p>
     </div>
 </div>

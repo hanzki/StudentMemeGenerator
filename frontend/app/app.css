@@ -42,6 +42,9 @@
 
 body {
   background-color: rgba(140, 133, 123, 1); /*#EE3E34; #FF671F;*/
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
