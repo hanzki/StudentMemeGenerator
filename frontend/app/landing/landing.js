@@ -2,7 +2,7 @@
 
 angular.module('myApp.landing', ["ui.router"])
 
-    .controller('LandingCtrl', ["$scope", "$state", function($scope, $state) {
+    .controller('LandingCtrl', ["$scope", "$state", "MemeService", function($scope, $state, MemeService) {
 
         function mockMeme(url) {
             return {
@@ -18,11 +18,13 @@ angular.module('myApp.landing', ["ui.router"])
             $state.go("meme", {id: id});
         };
 
-        $scope.memes24h = [
-                mockMeme("http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/0913/harry-potter-memes-potter-lookin-fine.jpg"),
-                mockMeme("http://contexts.org/files/2013/11/JAR-meme-drunk-baby.jpeg"),
-                mockMeme("https://s-media-cache-ak0.pinimg.com/236x/40/3d/8b/403d8b790f1af60b376d39580aec5893.jpg")
-            ];
+        $scope.memes24h = {};
+        MemeService.getMemes(
+            function(memes) {
+                $scope.memes24h = memes;
+            });
+        //TODO different getMemes-calls for memes24h, 7d and 30d
+
 
         $scope.memes7d = [
                 mockMeme("http://www.newslinq.com/wp-content/uploads/2014/06/ex-girlfriend-meme-14.jpg"),
