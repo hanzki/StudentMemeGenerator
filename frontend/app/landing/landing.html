@@ -1,34 +1,39 @@
 <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 center">
-        <p>Welcome to the demo version of <b>Student Meme Generator</b>, a service targeted to Aalto University students. Feel free to create or explore funny meme pictures!</p>
+        <p>Welcome to the <b>Student Meme Generator</b>, a service targeted to Aalto University students. Feel free to create or explore funny meme pictures!</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col s12 center">
-        <a ui-sref="imageSelection" class="waves-effect waves-light btn-large">Create A Meme <i class="material-icons right">add</i></a>
+        <a ui-sref="imageSelection" class="waves-effect waves-light btn-large">
+            Create A Meme <i class="material-icons right">add</i></a>
     </div>
 </div>
 
 <div class="row">
-    <div class="col m12 l4 center">
-        <h4>Best 24h</h4>
+    <!-- whitespace -->
+</div>
+
+<div class="row">
+    <div class="col s12 m4 center memecol">
+        <h5>TOP TODAY</h5>
         <img class="meme-img-small clickable"
-             ng-repeat="meme in memes24h"
+             ng-repeat-start="meme in memes24h | orderBy: '-id' | limitTo: 6"
              ng-src="{{ meme.url }}"
              ng-click="openMeme(meme.id)"
-        >
+        ><br ng-repeat-end>
     </div>
-    <div class="col m12 l4 center">
-        <h4>Best 7d</h4>
+    <div class="col s12 m4 center memecol">
+        <h5>TOP THIS WEEK</h5>
         <img class="meme-img-small clickable"
              ng-repeat="meme in memes7d"
              ng-src="{{ meme.url }}"
              ng-click="openMeme(meme.id)"
         >
     </div>
-    <div class="col m12 l4 center">
-        <h4>Best 30d</h4>
+    <div class="col s12 m4 center memecol">
+        <h5>TOP THIS MONTH</h5>
         <img class="meme-img-small clickable"
              ng-repeat="meme in memes30d"
              ng-src="{{ meme.url }}"

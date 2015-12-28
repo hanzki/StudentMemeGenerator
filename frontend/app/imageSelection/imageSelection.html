@@ -1,17 +1,18 @@
 <div class="row">
     <div class="col s12 center">
-        <h3>Select Image</h3>
+        <h4>SELECT IMAGE</h4>
     </div>
 </div>
 
 <div class="row">
     <div class="col s12 center">
-        <a href="#newImageModal" class="waves-effect waves-light btn" modal>Upload new image</a>
+        <a href="#newImageModal" class="waves-effect waves-light btn" modal>
+            Upload new image <i class="material-icons right">file_upload</i></a>
     </div>
 </div>
 
 <div class="row">
-    <div class="col s10 offset-s1 center">
+    <div class="col s12 center">
         <img class="meme-template-img z-depth-1 hoverable clickable"
              ng-repeat="image in images"
              ng-src="{{ image.url }}"
@@ -26,8 +27,8 @@
         <p>Choose an image you want to upload</p>
         <form name="form">
             <input type="file" name="memeImage" ngf-select ng-model="file"
-                   ngf-pattern="'image/*'" accept="image/*">
-            <input type="submit" class="btn" value="Upload" ng-click="uploadImage()">
+                   ngf-pattern="'image/*'" accept="image/*" ng-change="fileNameChanged()">
+            <input type="submit" class="btn disabled" value="Upload" ng-click="uploadImage()" id="uploadbutton">
         </form>
     </div>
     <div class="modal-footer">

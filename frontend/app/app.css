@@ -6,6 +6,11 @@
   url("fonts/impact.eot");
 }
 
+@font-face{
+  font-family: "texgyre";
+  src: url("fonts/texgyreschola-bolditalic.otf");
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -36,15 +41,18 @@
 }
 
 body {
-  background-color: #FF671F;
+  background-color: rgba(140, 133, 123, 1); /*#EE3E34; #FF671F;*/
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
 .btn, .btn-large {
-  background-color: #78BE20;
+  background-color: rgba(120, 190, 32, 1); /*rgba(0, 94, 184, 1); */
 }
 .btn:hover, .btn-large:hover {
-  background-color: #79c724;
+  background-color: rgba(0, 150, 94, 1);
 }
 
 .btn-large {
@@ -63,20 +71,29 @@ body {
   padding: 20px 0;
 }
 
+#mainContainer .row{ /* Fix materialize overflowing rows*/
+  margin-right: 0;
+  margin-left: 0;
+}
+#mainContainer h4, h5{
+  color: rgba(117, 59, 189, 1);
+}
+
+
 .clickable:hover {
   cursor: pointer;
 }
 
 .meme-img-small {
-  max-width: 300px;
+  max-width: 250px;
   width: 100%;
-  margin: 1em;
+  padding: 0.7em;
 }
 
 .meme-img-large {
   max-width: 500px;
   width: 100%;
-  margin: 1em;
+  padding: 1em;
 }
 
 .meme-img-div {
@@ -88,9 +105,9 @@ body {
 }
 
 .meme-template-img {
-  max-width: 250px;
+  max-width: 200px;
   width: 100%;
-  margin: 1em;
+  padding: 0.7em;
 }
 
 .meme-editor-img {
@@ -100,28 +117,50 @@ body {
   height: 300px;
   width: 300px;
   background-size:cover;
+  margin-top: 1em;
+  margin-right: auto;
+  margin-left: auto; 
+  position: relative;
 }
 
 footer.page-footer {
-  background-color: hsla(262,45%,45%,1);
+  background-color: rgba(117, 59, 189, 1);
   margin-top: 0;
 }
 
 nav.top-nav {
-  height: 122px;
-  box-shadow: none;
-  background-color: hsla(262,45%,45%,1);
+  /*height: 122px;*/
+  /*box-shadow: none;*/
+  background-color: rgba(117, 59, 189, 1);
 }
 
 .page-title {
-  line-height: 122px;
+  /*line-height: 122px;
   font-size: 48px;
-  /*margin-left: 1em;*/
+  margin-left: 1em;*/
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-weight: bold;
 }
+
+.italictxt{
+  font-family: 'texgyre', 'Times New Roman';
+}
+
+.yellowbig{
+  color: rgba(255, 205, 0, 1);
+  font-size: 125%;
+}
+
+.memecol{
+  border-top: 1px solid rgba(117, 59, 189, 1);
+  border-radius: 2em; 
+  /*color: rgba(117, 59, 189, 1);*/
+}
+
 
 .memetxt{
   font-family: 'Impact', 'Arial Black';
-  font-size: 3em;
+  font-size: 2em;
   color: #fff;
   text-shadow:
     -1px -1px 0 #000,
@@ -129,10 +168,24 @@ nav.top-nav {
     -1px 1px 0 #000,
     1px 1px 0 #000;
   text-transform: uppercase;
+  text-align: center;
 }
 .memetxt.top{
-  margin-top: 0%;
+  position: absolute;
+  top: -1em;
+  text-align: center;
+  width: 100%;
 }
 .memetxt.bottom{
-  margin-top: 55%;
+  position: absolute;
+  bottom: -1em;
+  text-align: center;
+  width: 100%;
+}
+
+#topText, #bottomText{
+  max-width: 300px;
+}
+
+.fiftybtn{
 }

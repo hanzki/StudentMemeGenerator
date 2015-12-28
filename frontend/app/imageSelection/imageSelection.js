@@ -29,4 +29,8 @@ angular.module('myApp.imageSelection', ["ui.router", "ngFileUpload"])
                 }
             );
 
+            $scope.fileNameChanged = function(){
+                angular.element('#uploadbutton').removeClass('disabled');
+            }
+
     }]);
