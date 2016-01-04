@@ -27,6 +27,17 @@ router.route('/memes')
 		.post(function(req,res) { memes.addMeme(req,res) })
 		.get(function(req,res) { memes.getAllMemes(req,res) });
 
+/* Memes created today */
+router.route('/memes/today')
+		.get(function(req,res) { memes.getToday(req,res) });
+
+/* Memes created this week */
+router.route('/memes/week')
+		.get(function(req,res) { memes.getWeek(req,res) });
+
+/* Memes created this month */
+router.route('/memes/month')
+		.get(function(req,res) { memes.getMonth(req,res) });
 
 /* Single memes routes */
 router.route('/memes/:meme_id')

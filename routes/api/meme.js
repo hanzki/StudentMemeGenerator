@@ -46,6 +46,57 @@ module.exports.getSingleMeme = function(req, res, id) {
     
 };
 
+module.exports.getToday = function(req,res) {
+
+    db.memes.findAll({
+        where: {
+            createdAt: {
+                $gt: new Date(new Date - 24 * 60 * 60 * 1000)
+            }
+        }
+    }).then(function(memes) {
+        res.json(memes.map(apiMeme));
+    }).catch(function(err) {
+        console.error("sql error", err);
+        res.status(400).send(err);
+    });
+
+};
+
+module.exports.getWeek = function(req,res) {
+
+    db.memes.findAll({
+        where: {
+            createdAt: {
+                $gt: new Date(new Date - 7 * 24 * 60 * 60 * 1000)
+            }
+        }
+    }).then(function(memes) {
+        res.json(memes.map(apiMeme));
+    }).catch(function(err) {
+        console.error("sql error", err);
+        res.status(400).send(err);
+    });
+
+};
+
+module.exports.getMonth = function(req,res) {
+
+    db.memes.findAll({
+        where: {
+            createdAt: {
+                $gt: new Date(new Date - 30 * 24 * 60 * 60 * 1000)
+            }
+        }
+    }).then(function(memes) {
+        res.json(memes.map(apiMeme));
+    }).catch(function(err) {
+        console.error("sql error", err);
+        res.status(400).send(err);
+    });
+
+};
+
 function apiMeme(meme) {
     return {
         id: meme.id,

@@ -38,6 +38,39 @@ angular.module('myApp.memeService', ['ngCookies'])
             );
         };
 
+        this.getMemesForToday = function(cb) {
+            $http.get("api/memes/today").then(
+                function(response) {
+                    cb(response.data);
+                },
+                function (response) {
+                    console.error(response);
+                }
+            );
+        };
+
+        this.getMemesForWeek = function(cb) {
+            $http.get("api/memes/week").then(
+                function(response) {
+                    cb(response.data);
+                },
+                function (response) {
+                    console.error(response);
+                }
+            );
+        };
+
+        this.getMemesForMonth = function(cb) {
+            $http.get("api/memes/month").then(
+                function(response) {
+                    cb(response.data);
+                },
+                function (response) {
+                    console.error(response);
+                }
+            );
+        };
+
         this.getMeme = function(id, cb) {
             $http.get("api/memes/" + id).then(
                 function(response) {
