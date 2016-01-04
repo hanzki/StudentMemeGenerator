@@ -37,6 +37,15 @@ image file. The file to upload covers the whole body of the request.
 **List all memes** `GET /api/memes`  
 Returns all memes saved on the server as a list *Meme* objects
 
+**List memes newer than 24 hours** `GET /api/memes/today`  
+Returns memes that are no older than 24 hours as a list *Meme* objects
+
+**List memes newer than 7 days** `GET /api/memes/week`  
+Returns memes that are no older than 7 days as a list *Meme* objects
+
+**List memes newer than 30 days** `GET /api/memes/month`  
+Returns memes that are no older than 30 days as a list *Meme* objects
+
 **Get single meme** `GET /api/memes/<id>`  
 Returns a meme matching the requested `id` as an *Meme* object
 
