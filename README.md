@@ -8,6 +8,9 @@ funny meme pictures.
 You need to specify a postgresql database to be used by supplying a database url via 
 `DATABASE_URL` environmental variable or by modifying the default url in `models/index.js`
 
+The system uses AWS S3 for file storage. You need to specify your credentials with environmental
+variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+
 The meme image generation needs imageMagick and ghostscript installed.  
 OSX: `brew install imagemagick ghostscript`  
 Ubuntu: `apt-get install imagemagick ghostscript`  

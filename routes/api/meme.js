@@ -1,5 +1,7 @@
 var db = require('../../models');
 var caption = require('caption');
+var fs = require('fs');
+var AWS = require('aws-sdk');
 
 module.exports.addMeme = function(req, res) {
 
@@ -120,10 +122,28 @@ function createMemeImage(meme, tt, bt, cb) {
 
             caption.path('files/uploads/' + image.filename,
                 options,
-                function(err, image) {
+                function(err, filename) {
                     if(!err) {
-                        console.log("created meme image", image);
-                        cb(image);
+                        console.log("created meme image", filename);
+
+                        var fileStream = fs.createReadStream(filename);
+                        fileStream.on('error', function (err) {
+                            if (err) { throw err; }
+                        });
+                        fileStream.on('open', function () {
+                            var s3 = new AWS.S3();
+                            s3.putObject({
+                                Bucket: 'hanzkitest',
+                                Key: filename,
+                                Body: fileStream
+                            }, function (err) {
+                                if (err) { throw err; }
+                                else {
+                                    console.log("image uploaded to S3 successfully");
+                                    cb(filename);
+                                }
+                            });
+                        });
                     } else {
                         console.error("meme image creation error", err);
                         cb(err);

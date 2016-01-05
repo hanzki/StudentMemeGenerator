@@ -8,17 +8,18 @@
     "prestart": "npm install"
   },
   "dependencies": {
-    "express": "~4.13.3",
-    "pg": "~4.4.3",
-    "sequelize": "~3.12.2",
-    "pg-hstore": "~2.3.2",
-    "debug": "~2.2.0",
-    "serve-favicon": "~2.3.0",
-    "morgan": "~1.6.1",
-    "cookie-parser": "~1.4.0",
+    "aws-sdk": "^2.2.26",
     "body-parser": "~1.14.1",
     "bower": "~1.6.5",
+    "caption": "~0.1.1",
+    "cookie-parser": "~1.4.0",
+    "debug": "~2.2.0",
+    "express": "~4.13.3",
+    "morgan": "~1.6.1",
     "multer": "~1.1.0",
-    "caption": "~0.1.1"
+    "pg": "~4.4.3",
+    "pg-hstore": "~2.3.2",
+    "sequelize": "~3.12.2",
+    "serve-favicon": "~2.3.0"
   }
 }

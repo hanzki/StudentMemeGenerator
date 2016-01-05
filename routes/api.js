@@ -45,4 +45,6 @@ router.route('/memes/:meme_id')
 	.put(function(req, res) { memes.updateMeme(req, res, req.params.meme_id) })
 	.delete(function(req, res) { memes.deleteMeme(req, res, req.params.meme_id) });
 
+router.route('/s3test').get(function(req,res) { images.s3test(req,res) });
+
 module.exports = router;
